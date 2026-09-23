@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MembershipSection from '../components/MembershipSection.astro';
+import CTASection from '../components/CTASection.astro';
+import { site } from '../config/site';
+---
+
+<BaseLayout
+  title="Membresía"
+  description="Planes de membresía de Snap Fitness: qué incluye tu acceso al gimnasio, opciones flexibles y cómo consultar precios por WhatsApp."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__eyebrow">Planes</span>
+      <h1>Membresía simple y flexible</h1>
+      <p>
+        Elige la modalidad que mejor se adapte a tu ritmo. Confirmamos precios y condiciones por
+        WhatsApp antes de que te inscribas.
+      </p>
+      <a
+        class="btn btn--primary"
+        href={`${site.whatsapp}?text=${encodeURIComponent('Hola, me gustaría conocer los planes de membresía.')}`}
+        target="_blank"
+        rel="noopener"
+      >
+        Consultar precios
+      </a>
+    </div>
+  </section>
+
+  <MembershipSection />
+  <CTASection />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(115deg, var(--color-dark) 0%, #2a0a12 55%, var(--color-primary-dark) 100%);
+    color: #fff;
+    padding-block: clamp(3.5rem, 8vw, 5.5rem);
+  }
+
+  .page-hero .section__eyebrow {
+    color: #ff9aab;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.1rem, 5vw, 3.2rem);
+    max-width: 16ch;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-hero p {
+    max-width: 56ch;
+    color: #e8eaef;
+    font-size: 1.08rem;
+    margin-bottom: 1.75rem;
+  }
+</style>

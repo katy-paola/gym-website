@@ -1,0 +1,226 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { trainingSteps, membership, site } from '../config/site';
+import Icon from '../components/Icon.astro';
+import CTASection from '../components/CTASection.astro';
+
+const href = `${site.whatsapp}?text=${encodeURIComponent('Hola, me interesa el entrenamiento personalizado. ¿Cómo agendo una evaluación?')}`;
+
+const forWho = [
+  'Personas que empiezan y quieren seguridad al entrenar',
+  'Quienes se estancaron y necesitan un plan con estructura',
+  'Objetivos claros: bajar de grasa, ganar fuerza, mejorar energía',
+  'Quienes prefieren entrenar acompañados y con seguimiento',
+];
+---
+
+<BaseLayout
+  title="Entrenamiento personalizado"
+  description="Conoce cómo funciona el entrenamiento personalizado en Snap Fitness: evaluación, plan a medida, sesiones guiadas y seguimiento de progreso."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__eyebrow">Servicio estrella</span>
+      <h1>Entrenamiento personalizado</h1>
+      <p>
+        Un plan diseñado para ti, con un entrenador que acompaña cada paso: de la evaluación inicial
+        a los ajustes según tus resultados.
+      </p>
+      <a class="btn btn--primary" href={href} target="_blank" rel="noopener">
+        Agendar evaluación por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <header class="section__head">
+        <span class="section__eyebrow">El proceso</span>
+        <h2 class="section__title">Cuatro pasos, cero improvisación</h2>
+      </header>
+      <ol class="process">
+        {trainingSteps.map((s) => (
+          <li>
+            <span class="process__num">{s.step}</span>
+            <h3>{s.title}</h3>
+            <p>{s.description}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container two-col">
+      <div>
+        <header class="section__head">
+          <span class="section__eyebrow">Para quién es</span>
+          <h2 class="section__title">Si te identificas con esto, es para ti</h2>
+        </header>
+        <ul class="bullets">
+          {forWho.map((item) => (
+            <li><span class="bullets__check"><Icon name="check" /></span> {item}</li>
+          ))}
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Qué incluye</h3>
+        <ul>
+          <li>Evaluación inicial de objetivos y nivel</li>
+          <li>Rutina personalizada y progresión</li>
+          <li>Sesiones con acompañamiento del entrenador</li>
+          <li>Ajustes según tus avances</li>
+          <li>Orientación de técnica y hábitos</li>
+        </ul>
+        <p class="info-card__note">{membership.note}</p>
+        <a class="btn btn--primary" href={href} target="_blank" rel="noopener">
+          Consultar disponibilidad
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background:
+      linear-gradient(115deg, rgba(12, 13, 18, 0.94), rgba(228, 0, 43, 0.55)),
+      url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1600&h=800&fit=crop')
+        center / cover;
+    color: #fff;
+    padding-block: clamp(4rem, 9vw, 6.5rem);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    max-width: 16ch;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-hero p {
+    max-width: 56ch;
+    color: #e8eaef;
+    font-size: 1.08rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .page-hero .section__eyebrow {
+    color: #ff9aab;
+  }
+
+  .process {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .process li {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    padding: 1.5rem 1.35rem;
+  }
+
+  .process__num {
+    font-family: var(--font-display);
+    font-weight: 900;
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .process h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .process p {
+    margin: 0;
+    color: var(--color-ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .two-col {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .bullets {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .bullets li {
+    display: flex;
+    gap: 0.65rem;
+    align-items: flex-start;
+    color: var(--color-ink-soft);
+    font-weight: 500;
+  }
+
+  .bullets__check {
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+
+  .info-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .info-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .info-card ul {
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+    display: grid;
+    gap: 0.6rem;
+    color: var(--color-ink-soft);
+  }
+
+  .info-card ul li::before {
+    content: '✓';
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-right: 0.55rem;
+  }
+
+  .info-card__note {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  @media (min-width: 860px) {
+    .process {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .two-col {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+</style>

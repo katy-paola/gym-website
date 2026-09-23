@@ -1,0 +1,67 @@
+---
+import { services } from '../config/site';
+import Icon from './Icon.astro';
+---
+
+<section class="section" id="servicios">
+  <div class="container">
+    <header class="section__head">
+      <span class="section__eyebrow">Servicios</span>
+      <h2 class="section__title">Todo lo que necesitas para entrenar bien</h2>
+      <p class="section__lead">
+        Organizamos nuestra oferta en pocos puntos claros: acceso al gimnasio, entrenamiento
+        personalizado y acompañamiento real durante tu proceso.
+      </p>
+    </header>
+
+    <div class="grid grid--4">
+      {services.map((s) => (
+        <article class="card">
+          <span class="card__icon">
+            <Icon name={s.icon as 'key'} />
+          </span>
+          <h3 class="card__title">{s.title}</h3>
+          <p class="card__text">{s.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: #ffd0da;
+  }
+
+  .card__icon {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .card__title {
+    font-size: 1.08rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .card__text {
+    color: var(--color-ink-soft);
+    font-size: 0.95rem;
+  }
+</style>

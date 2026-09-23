@@ -1,0 +1,88 @@
+---
+import { trainers } from '../config/site';
+---
+
+<section class="section section--alt" id="equipo">
+  <div class="container">
+    <header class="section__head">
+      <span class="section__eyebrow">Equipo</span>
+      <h2 class="section__title">Entrenadores que te acompañan</h2>
+      <p class="section__lead">
+        Profesionales dedicados a guiarte con técnica, constancia y un trato cercano en cada sesión.
+      </p>
+    </header>
+
+    <div class="grid grid--3">
+      {trainers.map((t) => (
+        <article class="trainer">
+          <div class="trainer__photo">
+            <img src={t.image} alt={`Retrato de ${t.name}, ${t.role} en ${'Snap Fitness'}`} width="600" height="600" loading="lazy" />
+          </div>
+          <div class="trainer__body">
+            <span class="trainer__role">{t.role}</span>
+            <h3 class="trainer__name">{t.name}</h3>
+            <p class="trainer__specialty">{t.specialty}</p>
+            <p class="trainer__bio">{t.bio}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .trainer {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .trainer:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .trainer__photo {
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: var(--color-surface-alt);
+  }
+
+  .trainer__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .trainer__body {
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .trainer__role {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+
+  .trainer__name {
+    font-size: 1.15rem;
+    margin: 0.35rem 0 0.2rem;
+  }
+
+  .trainer__specialty {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-ink-soft);
+    margin-bottom: 0.6rem;
+  }
+
+  .trainer__bio {
+    font-size: 0.92rem;
+    color: var(--color-muted);
+    margin: 0;
+  }
+</style>

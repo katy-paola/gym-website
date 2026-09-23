@@ -1,0 +1,99 @@
+---
+import { facilities } from '../config/site';
+---
+
+<section class="section" id="instalaciones">
+  <div class="container">
+    <header class="section__head">
+      <span class="section__eyebrow">Instalaciones</span>
+      <h2 class="section__title">Un espacio para entrenar cómodo</h2>
+      <p class="section__lead">
+        Zonas diferenciadas de cardio, fuerza y trabajo funcional, con mantenimiento e higiene
+        constantes.
+      </p>
+    </header>
+
+    <div class="gallery">
+      {facilities.map((f, i) => (
+        <figure class:list={['shot', { 'shot--wide': i === 0 }]}>
+          <img src={f.image} alt={f.title} width="900" height="700" loading="lazy" />
+          <figcaption>
+            <strong>{f.title}</strong>
+            <span>{f.description}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .gallery {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .shot {
+    position: relative;
+    margin: 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--color-surface-alt);
+    min-height: 240px;
+  }
+
+  .shot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+  }
+
+  .shot figcaption {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 2.5rem 1.25rem 1.15rem;
+    background: linear-gradient(to top, rgba(8, 9, 12, 0.9), transparent);
+    color: #fff;
+    display: grid;
+    gap: 0.15rem;
+  }
+
+  .shot figcaption strong {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+  }
+
+  .shot figcaption span {
+    font-size: 0.88rem;
+    color: #d5d8e0;
+  }
+
+  @media (min-width: 720px) {
+    .gallery {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 340px 260px;
+      grid-auto-rows: 260px;
+    }
+
+    .shot {
+      grid-column: span 2;
+      min-height: 0;
+      height: 100%;
+    }
+
+    .shot--wide {
+      grid-column: span 6;
+      min-height: 0;
+      height: 100%;
+    }
+  }
+
+  @media (max-width: 719px) {
+    .shot,
+    .shot--wide {
+      min-height: 260px;
+    }
+  }
+</style>

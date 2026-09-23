@@ -1,0 +1,156 @@
+---
+import { site } from '../config/site';
+import Icon from './Icon.astro';
+---
+
+<section class="section section--alt" id="ubicacion">
+  <div class="container">
+    <header class="section__head">
+      <span class="section__eyebrow">Horarios y ubicación</span>
+      <h2 class="section__title">Visítanos cuando te quede cómodo</h2>
+      <p class="section__lead">
+        Acceso libre dentro de nuestro horario de atención. Confirma tu visita por WhatsApp antes de
+        venir.
+      </p>
+    </header>
+
+    <div class="split">
+      <div class="panel">
+        <h3 class="panel__title"><Icon name="clock" /> Horarios</h3>
+        <dl class="hours">
+          {site.hours.map((h) => (
+            <>
+              <dt>{h.days}</dt>
+              <dd>{h.hours}</dd>
+            </>
+          ))}
+        </dl>
+        {!site.is24_7 && (
+          <p class="panel__note">No somos 24/7: atendemos dentro de estos horarios, con acceso libre.</p>
+        )}
+
+        <h3 class="panel__title panel__title--spaced"><Icon name="pin" /> Ubicación</h3>
+        <address class="address">
+          {site.address.street}<br />
+          {site.address.city}, {site.address.department}<br />
+          {site.address.country}
+        </address>
+        <div class="panel__actions">
+          <a class="btn btn--outline" href={site.address.mapsUrl} target="_blank" rel="noopener">
+            Ver en Google Maps
+          </a>
+          <a class="btn btn--primary" href={site.whatsapp} target="_blank" rel="noopener">
+            Pedir indicaciones
+          </a>
+        </div>
+      </div>
+
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps?q=Snap+Fitness&output=embed"
+          title="Mapa de ubicación de Snap Fitness"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .split {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .panel {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.35rem, 3vw, 2rem);
+  }
+
+  .panel__title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+
+  .panel__title--spaced {
+    margin-top: 1.75rem;
+  }
+
+  .hours {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.55rem 1rem;
+    font-size: 0.98rem;
+  }
+
+  .hours dt {
+    font-weight: 600;
+    color: var(--color-ink-soft);
+  }
+
+  .hours dd {
+    margin: 0;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .panel__note {
+    margin-top: 1rem;
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    background: var(--color-primary-soft);
+    border-radius: var(--radius-sm);
+    padding: 0.65rem 0.85rem;
+  }
+
+  .address {
+    font-style: normal;
+    color: var(--color-ink-soft);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  .panel__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .map {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    min-height: 320px;
+    background: var(--color-surface);
+  }
+
+  .map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    border: 0;
+    display: block;
+  }
+
+  @media (min-width: 900px) {
+    .split {
+      grid-template-columns: 1fr 1.1fr;
+      align-items: stretch;
+    }
+
+    .map,
+    .map iframe {
+      min-height: 100%;
+      height: 100%;
+    }
+  }
+</style>

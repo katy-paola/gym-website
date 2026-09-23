@@ -1,0 +1,42 @@
+
+> snap-fitness-web@1.0.0 dev
+> astro dev
+
+[2m20:34:50[22m [34m[types][39m Generated [2m2ms[22m
+[2m20:34:50[22m [34m[content][39m Syncing content
+[2m20:34:50[22m [34m[content][39m Synced content
+
+[42m[1m astro [22m[49m [32mv5.18.2[39m [2mready in[22m 1499 [2mms[22m
+
+[2m┃[22m Local    [36mhttp://localhost:4321/[39m
+[2m┃[22m Network  [2muse --host to expose[22m
+
+[2m20:34:50[22m [32mwatching for file changes...[39m
+[2m20:35:13[22m [34m[200][39m / [2m98ms[22m
+[2m20:36:04[22m [34m[200][39m / [2m23ms[22m
+[2m20:43:32[22m [34m[watch][39m /src/styles/global.css
+[2m20:43:33[22m [34m[200][39m / [2m26ms[22m
+[2m20:43:33[22m [34m[watch][39m /src/styles/global.css
+[2m20:43:34[22m [34m[200][39m / [2m34ms[22m
+[2m20:43:34[22m [34m[watch][39m /src/styles/global.css
+[2m20:43:35[22m [34m[200][39m / [2m19ms[22m
+[2m20:43:35[22m [34m[watch][39m /src/styles/global.css
+[2m20:43:36[22m [34m[watch][39m /src/styles/global.css
+[2m20:43:37[22m [34m[200][39m / [2m32ms[22m
+[2m20:43:44[22m [34m[watch][39m /src/components/Hero.astro?astro&type=style&index=0&lang.css
+[2m20:43:44[22m [34m[watch][39m src/components/Hero.astro
+[2m20:43:46[22m [34m[watch][39m /src/components/ServicesSection.astro?astro&type=style&index=0&lang.css
+[2m20:43:46[22m [34m[watch][39m src/components/ServicesSection.astro
+[2m20:43:47[22m [34m[watch][39m /src/components/PersonalTrainingSection.astro?astro&type=style&index=0&lang.css
+[2m20:43:47[22m [34m[watch][39m src/components/PersonalTrainingSection.astro
+[2m20:43:51[22m [34m[200][39m / [2m22ms[22m
+[2m20:44:41[22m [34m[200][39m / [2m24ms[22m
+[2m20:46:37[22m [34m[200][39m / [2m21ms[22m
+[2m20:46:37[22m [34m[watch][39m /src/components/FacilitiesSection.astro?astro&type=style&index=0&lang.css
+[2m20:46:37[22m [34m[watch][39m src/components/FacilitiesSection.astro
+[2m20:46:41[22m [34m[200][39m /instalaciones [2m11ms[22m
+[2m20:47:30[22m [34m[200][39m / [2m16ms[22m
+[2m20:47:33[22m [34m[200][39m / [2m14ms[22m
+[2m20:49:35[22m [34m[watch][39m /src/components/FacilitiesSection.astro?astro&type=style&index=0&lang.css
+[2m20:49:35[22m [34m[watch][39m src/components/FacilitiesSection.astro
+[2m20:49:40[22m [34m[200][39m / [2m28ms[22m

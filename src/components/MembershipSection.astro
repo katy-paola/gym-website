@@ -1,0 +1,178 @@
+---
+import { membership, site } from '../config/site';
+import Icon from './Icon.astro';
+
+const href = `${site.whatsapp}?text=${encodeURIComponent('Hola, me gustaría conocer los planes de membresía de Snap Fitness.')}`;
+---
+
+<section class="section section--alt" id="membresia">
+  <div class="container">
+    <header class="section__head">
+      <span class="section__eyebrow">Membresía</span>
+      <h2 class="section__title">Qué incluye tu membresía</h2>
+      <p class="section__lead">
+        Planes simples y flexibles, sin letra pequeña. Consulta precios y disponibilidad directo por
+        WhatsApp.
+      </p>
+    </header>
+
+    <ul class="includes">
+      {membership.includes.map((item) => (
+        <li>
+          <span class="includes__check"><Icon name="check" /></span>
+          {item}
+        </li>
+      ))}
+    </ul>
+
+    <div class="grid grid--3 plans">
+      {membership.plans.map((plan) => (
+        <article class:list={['plan', { 'plan--featured': plan.highlighted }]}>
+          {plan.highlighted && <span class="plan__tag">Recomendado</span>}
+          <h3 class="plan__name">{plan.name}</h3>
+          <p class="plan__price">{plan.price}</p>
+          <p class="plan__period">{plan.period}</p>
+          <ul class="plan__features">
+            {plan.features.map((f) => (
+              <li><Icon name="check" /> {f}</li>
+            ))}
+          </ul>
+          <a
+            class:list={['btn', plan.highlighted ? 'btn--primary' : 'btn--outline', 'plan__cta']}
+            href={href}
+            target="_blank"
+            rel="noopener"
+          >
+            Consultar precio
+          </a>
+        </article>
+      ))}
+    </div>
+
+    <p class="note">{membership.note}</p>
+  </div>
+</section>
+
+<style>
+  .includes {
+    list-style: none;
+    margin: 0 0 2.5rem;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .includes li {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-weight: 500;
+    color: var(--color-ink-soft);
+  }
+
+  .includes__check {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+
+  .plan {
+    position: relative;
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .plan--featured {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+  }
+
+  .plan__tag {
+    position: absolute;
+    top: -12px;
+    left: 1.5rem;
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+  }
+
+  .plan__name {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .plan__price {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin: 0;
+    line-height: 1;
+  }
+
+  .plan__period {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    margin: 0.35rem 0 1.25rem;
+  }
+
+  .plan__features {
+    list-style: none;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    display: grid;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    color: var(--color-ink-soft);
+    flex: 1;
+  }
+
+  .plan__features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .plan__features :global(svg) {
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+
+  .plan__cta {
+    width: 100%;
+  }
+
+  .note {
+    margin-top: 2rem;
+    font-size: 0.92rem;
+    color: var(--color-muted);
+    max-width: 70ch;
+  }
+
+  @media (min-width: 720px) {
+    .includes {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 719px) {
+    .plan--featured {
+      transform: none;
+    }
+  }
+</style>

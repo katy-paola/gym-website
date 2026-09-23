@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FacilitiesSection from '../components/FacilitiesSection.astro';
+import ScheduleLocationSection from '../components/ScheduleLocationSection.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<BaseLayout
+  title="Instalaciones"
+  description="Zonas de cardio, fuerza y trabajo funcional en Snap Fitness. Consulta horarios, ubicación y agenda tu visita."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__eyebrow">Instalaciones</span>
+      <h1>Un gimnasio pensado para entrenar</h1>
+      <p>
+        Espacios diferenciados, equipo en buen estado y ambientes cuidados para que solo te ocupes
+        de entrenar.
+      </p>
+    </div>
+  </section>
+
+  <FacilitiesSection />
+  <ScheduleLocationSection />
+  <CTASection />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(115deg, var(--color-dark), #12161f 60%, var(--color-primary-dark));
+    color: #fff;
+    padding-block: clamp(3.5rem, 8vw, 5.5rem);
+  }
+
+  .page-hero .section__eyebrow {
+    color: #ff9aab;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.1rem, 5vw, 3.2rem);
+    max-width: 16ch;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-hero p {
+    max-width: 56ch;
+    color: #e8eaef;
+    font-size: 1.08rem;
+    margin: 0;
+  }
+</style>

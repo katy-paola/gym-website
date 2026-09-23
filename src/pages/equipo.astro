@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TrainersSection from '../components/TrainersSection.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<BaseLayout
+  title="Equipo"
+  description="Conoce al equipo de entrenadores de Snap Fitness: profesionales que te acompañan con guía, técnica y seguimiento en cada sesión."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__eyebrow">Equipo</span>
+      <h1>Personas que te impulsan</h1>
+      <p>
+        Nuestro equipo combina experiencia técnica y trato cercano para que avances con seguridad,
+        seas principiante o no.
+      </p>
+    </div>
+  </section>
+
+  <TrainersSection />
+  <CTASection />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(115deg, var(--color-dark), #1d0a10 60%, var(--color-primary-dark));
+    color: #fff;
+    padding-block: clamp(3.5rem, 8vw, 5.5rem);
+  }
+
+  .page-hero .section__eyebrow {
+    color: #ff9aab;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.1rem, 5vw, 3.2rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .page-hero p {
+    max-width: 56ch;
+    color: #e8eaef;
+    font-size: 1.08rem;
+    margin: 0;
+  }
+</style>

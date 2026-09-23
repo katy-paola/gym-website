@@ -1,0 +1,149 @@
+---
+import { site } from '../config/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <a class="footer__logo" href="/">
+        <span class="logo__mark" aria-hidden="true">S</span>
+        Snap <strong>Fitness</strong>
+      </a>
+      <p class="footer__text">
+        Gimnasio con acceso libre y entrenamiento personalizado. Un espacio para entrenar a tu ritmo y
+        avanzar hacia tus metas.
+      </p>
+      <a class="footer__ig" href={site.instagram} target="_blank" rel="noopener">
+        Instagram {site.instagramHandle}
+      </a>
+    </div>
+
+    <div>
+      <h3 class="footer__title">Explorar</h3>
+      <ul class="footer__links">
+        <li><a href="/#servicios">Servicios</a></li>
+        <li><a href="/#membresia">Membresía</a></li>
+        <li><a href="/entrenamiento-personalizado">Entrenamiento personalizado</a></li>
+        <li><a href="/#equipo">Equipo</a></li>
+        <li><a href="/#faq">Preguntas frecuentes</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="footer__title">Contacto</h3>
+      <ul class="footer__links">
+        <li>
+          <a href={site.whatsapp} target="_blank" rel="noopener">WhatsApp {site.phoneDisplay}</a>
+        </li>
+        <li>
+          <a href={`tel:${site.phoneRaw.replace('+', '')}`}>Llamar {site.phoneDisplay}</a>
+        </li>
+        <li><a href="/contacto">Visita y ubicación</a></li>
+        <li>
+          <span>{site.address.street}, {site.address.city}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <span>© {year} {site.name}. Todos los derechos reservados.</span>
+    <span>Hecho para la comunidad fitness.</span>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-dark);
+    color: #c7cbd4;
+    padding-top: clamp(3rem, 6vw, 4.5rem);
+  }
+
+  .footer__grid {
+    display: grid;
+    gap: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .footer__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .footer__logo strong {
+    color: var(--color-primary);
+  }
+
+  .logo__mark {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: var(--color-primary);
+    color: #fff;
+    font-weight: 900;
+  }
+
+  .footer__text {
+    max-width: 36ch;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer__ig {
+    color: #fff;
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 2px;
+  }
+
+  .footer__ig:hover {
+    color: var(--color-primary);
+  }
+
+  .footer__title {
+    color: #fff;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+
+  .footer__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+    font-size: 0.95rem;
+  }
+
+  .footer__links a:hover {
+    color: #fff;
+  }
+
+  .footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-block: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #8b919e;
+  }
+
+  @media (min-width: 800px) {
+    .footer__grid {
+      grid-template-columns: 1.4fr 1fr 1fr;
+    }
+  }
+</style>
