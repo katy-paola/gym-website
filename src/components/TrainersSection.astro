@@ -1,5 +1,10 @@
 ---
-import { trainers } from '../config/site';
+import { trainers, site } from '../config/site';
+
+function waHref(name: string): string {
+  const msg = `Hola, me interesa el entrenamiento personalizado con ${name}. ¿Podemos agendar una evaluación?`;
+  return `${site.whatsapp}?text=${encodeURIComponent(msg)}`;
+}
 ---
 
 <section class="section section--alt" id="equipo">
@@ -12,17 +17,19 @@ import { trainers } from '../config/site';
       </p>
     </header>
 
-    <div class="grid grid--3">
+    <div class="grid grid--2">
       {trainers.map((t) => (
         <article class="trainer">
           <div class="trainer__photo">
-            <img src={t.image} alt={`Retrato de ${t.name}, ${t.role} en ${'Snap Fitness'}`} width="600" height="600" loading="lazy" />
+            <img src={t.image} alt={`Retrato de ${t.name}, ${t.role} en Snap Fitness`} width="600" height="600" loading="lazy" />
           </div>
           <div class="trainer__body">
             <span class="trainer__role">{t.role}</span>
             <h3 class="trainer__name">{t.name}</h3>
             <p class="trainer__specialty">{t.specialty}</p>
-            <p class="trainer__bio">{t.bio}</p>
+            <a class="btn btn--outline trainer__cta" href={waHref(t.name)} target="_blank" rel="noopener">
+              Entrenamiento personalizado
+            </a>
           </div>
         </article>
       ))}
@@ -36,12 +43,6 @@ import { trainers } from '../config/site';
     border: 1px solid var(--color-line);
     border-radius: var(--radius-md);
     overflow: hidden;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-
-  .trainer:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
   }
 
   .trainer__photo {
@@ -80,9 +81,7 @@ import { trainers } from '../config/site';
     margin-bottom: 0.6rem;
   }
 
-  .trainer__bio {
-    font-size: 0.92rem;
-    color: var(--color-muted);
-    margin: 0;
+  .trainer__cta {
+    width: 100%;
   }
 </style>

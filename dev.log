@@ -40,3 +40,109 @@
 [2m20:49:35[22m [34m[watch][39m /src/components/FacilitiesSection.astro?astro&type=style&index=0&lang.css
 [2m20:49:35[22m [34m[watch][39m src/components/FacilitiesSection.astro
 [2m20:49:40[22m [34m[200][39m / [2m28ms[22m
+[2m21:13:35[22m [34m[200][39m / [2m53ms[22m
+[2m21:13:37[22m [34m[200][39m / [2m26ms[22m
+[2m21:14:50[22m [34m[200][39m / [2m7ms[22m
+[2m21:15:49[22m [34m[200][39m / [2m17ms[22m
+[2m21:16:15[22m [34m[200][39m / [2m13ms[22m
+[2m21:16:17[22m [34m[200][39m / [2m20ms[22m
+[2m21:17:44[22m [34m[200][39m / [2m10ms[22m
+[2m21:19:11[22m [34m[200][39m / [2m10ms[22m
+[2m21:19:12[22m [34m[watch][39m /src/components/MembershipSection.astro?astro&type=style&index=0&lang.css
+[2m21:19:12[22m [34m[200][39m / [2m14ms[22m
+[2m21:19:14[22m [34m[watch][39m /src/components/MembershipSection.astro?astro&type=style&index=0&lang.css
+[2m21:19:14[22m [34m[200][39m / [2m9ms[22m
+[31m[1m21:19:14[22m [ERROR][39m ctaHref is not defined
+  [1mStack trace:[22m
+[2m    at C:\Users\katy\Desktop\katy\coding\gym-website\src\components\MembershipSection.astro:1:1
+    at C:\Users\katy\Desktop\katy\coding\gym-website\src\components\MembershipSection.astro:29:25
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+[2m21:19:16[22m [34m[watch][39m /src/components/MembershipSection.astro?astro&type=style&index=0&lang.css
+[2m21:19:16[22m [34m[200][39m / [2m12ms[22m
+[2m21:19:17[22m [34m[watch][39m /src/components/MembershipSection.astro?astro&type=style&index=0&lang.css
+[2m21:19:17[22m [34m[watch][39m src/components/MembershipSection.astro
+[2m21:20:47[22m [34m[watch][39m src/components/Header.astro
+[2m21:20:47[22m [34m[200][39m / [2m17ms[22m
+[2m21:20:50[22m [34m[200][39m / [2m14ms[22m
+[2m21:21:02[22m [34m[watch][39m /src/components/Header.astro?astro&type=style&index=0&lang.css
+[2m21:21:02[22m [34m[watch][39m src/components/Header.astro
+[2m21:21:13[22m [34m[watch][39m /src/components/Header.astro?astro&type=style&index=0&lang.css
+[2m21:21:13[22m [34m[watch][39m src/components/Header.astro
+[2m21:21:14[22m [34m[watch][39m /src/components/Header.astro?astro&type=style&index=0&lang.css
+[2m21:21:14[22m [34m[watch][39m src/components/Header.astro
+[2m21:22:12[22m [34m[200][39m / [2m19ms[22m
+[2m21:22:56[22m [34m[watch][39m /src/components/TrainersSection.astro?astro&type=style&index=0&lang.css
+[2m21:22:56[22m [34m[watch][39m /src/components/TrainersSection.astro?astro&type=style&index=0&lang.css
+[2m21:22:57[22m [34m[200][39m / [2m74ms[22m
+[2m21:29:48[22m [34m[200][39m / [2m9ms[22m
+[2m21:30:55[22m [34m[200][39m / [2m21ms[22m
+[2m21:32:56[22m [34m[200][39m / [2m16ms[22m
+[2m21:34:18[22m [34m[200][39m / [2m17ms[22m
+[2m21:35:29[22m [34m[200][39m / [2m20ms[22m
+[2m21:36:59[22m [34m[200][39m / [2m19ms[22m
+[2m21:38:47[22m [34m[watch][39m /src/styles/global.css
+[2m21:38:47[22m [34m[200][39m / [2m27ms[22m
+[2m21:39:03[22m [34m[200][39m / [2m14ms[22m
+[2m21:39:39[22m [34m[200][39m / [2m20ms[22m
+[2m21:40:37[22m [34m[watch][39m /src/styles/global.css
+[2m21:40:38[22m [34m[200][39m / [2m18ms[22m
+[2m21:40:39[22m [34m[watch][39m /src/components/CTASection.astro?astro&type=style&index=0&lang.css
+[2m21:40:39[22m [34m[watch][39m src/components/CTASection.astro
+[2m21:43:13[22m [34m[watch][39m /src/components/InstagramSection.astro?astro&type=style&index=0&lang.css
+[2m21:43:14[22m [34m[200][39m / [2m17ms[22m
+[2m21:43:14[22m [34m[watch][39m /src/components/InstagramSection.astro?astro&type=style&index=0&lang.css
+[2m21:43:14[22m [34m[watch][39m src/components/InstagramSection.astro
+[2m21:44:23[22m [34m[watch][39m /src/components/InstagramSection.astro?astro&type=style&index=0&lang.css
+[2m21:44:23[22m [34m[watch][39m src/components/InstagramSection.astro
+[2m21:44:52[22m [34m[watch][39m /src/components/InstagramSection.astro?astro&type=style&index=0&lang.css
+[2m21:44:52[22m [34m[watch][39m src/components/InstagramSection.astro
+[2m21:45:48[22m [34m[watch][39m /src/styles/global.css
+[2m21:45:48[22m [34m[200][39m / [2m11ms[22m
+[2m21:46:40[22m [34m[200][39m / [2m23ms[22m
+[2m21:46:41[22m [34m[200][39m / [2m30ms[22m
+[2m21:46:41[22m [34m[watch][39m /src/components/MembershipSection.astro?astro&type=style&index=0&lang.css
+[2m21:46:42[22m [34m[200][39m / [2m12ms[22m
+[2m21:47:09[22m [34m[200][39m / [2m18ms[22m
+[2m21:47:11[22m [34m[200][39m / [2m29ms[22m
+[2m21:47:48[22m [34m[watch][39m /src/components/MembershipSection.astro?astro&type=style&index=0&lang.css
+[2m21:47:48[22m [34m[watch][39m src/components/MembershipSection.astro
+[2m21:49:19[22m [34m[200][39m / [2m30ms[22m
+[2m21:52:26[22m [34m[200][39m / [2m20ms[22m
+[2m21:52:26[22m [34m[watch][39m /src/components/Hero.astro?astro&type=style&index=0&lang.css
+[2m21:53:06[22m [34m[200][39m / [2m9ms[22m
+[2m22:01:33[22m [34m[200][39m / [2m10ms[22m
+[2m22:02:41[22m [34m[watch][39m /src/components/TrainersSection.astro?astro&type=style&index=0&lang.css
+[2m22:02:42[22m [34m[200][39m / [2m10ms[22m
+[2m22:02:42[22m [34m[watch][39m /src/components/TrainersSection.astro?astro&type=style&index=0&lang.css
+[2m22:02:43[22m [34m[200][39m / [2m11ms[22m
+[2m22:02:43[22m [34m[watch][39m /src/components/TrainersSection.astro?astro&type=style&index=0&lang.css
+[2m22:02:43[22m [34m[watch][39m src/components/TrainersSection.astro
+[2m22:02:46[22m [34m[200][39m / [2m18ms[22m
+[2m22:02:47[22m [34m[watch][39m /src/components/PersonalTrainingSection.astro?astro&type=style&index=0&lang.css
+[2m22:02:47[22m [34m[200][39m / [2m12ms[22m
+[2m22:03:45[22m [34m[200][39m / [2m14ms[22m
+[2m22:04:34[22m [34m[watch][39m /src/components/TrainersSection.astro?astro&type=style&index=0&lang.css
+[2m22:04:34[22m [34m[watch][39m src/components/TrainersSection.astro
+[2m22:04:35[22m [34m[watch][39m /src/components/ServicesSection.astro?astro&type=style&index=0&lang.css
+[2m22:04:35[22m [34m[watch][39m src/components/ServicesSection.astro
+[2m22:04:37[22m [34m[watch][39m /src/components/MembershipSection.astro?astro&type=style&index=0&lang.css
+[2m22:04:37[22m [34m[watch][39m src/components/MembershipSection.astro
+[2m22:04:51[22m [34m[watch][39m /src/components/MembershipSection.astro?astro&type=style&index=0&lang.css
+[2m22:04:51[22m [34m[watch][39m src/components/MembershipSection.astro
+[2m22:06:34[22m [34m[200][39m / [2m18ms[22m
+[2m22:07:55[22m [34m[watch][39m /src/components/TrainersSection.astro?astro&type=style&index=0&lang.css
+[2m22:07:55[22m [34m[watch][39m src/components/TrainersSection.astro
+[2m22:07:55[22m [34m[watch][39m /src/components/TrainersSection.astro?astro&type=style&index=0&lang.css
+[2m22:07:55[22m [34m[200][39m / [2m10ms[22m
+[2m22:08:33[22m [34m[200][39m / [2m32ms[22m
+[2m22:08:36[22m [34m[200][39m / [2m13ms[22m
+[2m22:10:04[22m [34m[200][39m / [2m62ms[22m
+[2m22:16:26[22m [34m[200][39m / [2m15ms[22m
+[2m22:18:33[22m [34m[watch][39m /src/components/TrainersSection.astro?astro&type=style&index=0&lang.css
+[2m22:18:33[22m [34m[watch][39m /src/components/TrainersSection.astro?astro&type=style&index=0&lang.css
+[2m22:18:36[22m [34m[200][39m / [2m16ms[22m
+[2m22:18:40[22m [34m[200][39m / [2m20ms[22m
+[2m22:21:28[22m [34m[watch][39m /src/components/Footer.astro?astro&type=style&index=0&lang.css
+[2m22:21:28[22m [34m[watch][39m src/components/Footer.astro
+[2m22:21:30[22m [34m[watch][39m /src/components/Footer.astro?astro&type=style&index=0&lang.css
+[2m22:21:30[22m [34m[watch][39m src/components/Footer.astro

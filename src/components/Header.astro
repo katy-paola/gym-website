@@ -28,10 +28,6 @@ const isActive = (href: string) => href.startsWith('/') && path === href;
       </ul>
     </nav>
 
-    <a class="btn btn--primary header__cta" href={site.whatsapp} target="_blank" rel="noopener">
-      WhatsApp
-    </a>
-
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </button>
@@ -44,11 +40,6 @@ const isActive = (href: string) => href.startsWith('/') && path === href;
           <a href={item.href}>{item.label}</a>
         </li>
       ))}
-      <li>
-        <a class="btn btn--primary" href={site.whatsapp} target="_blank" rel="noopener">
-          Escríbenos por WhatsApp
-        </a>
-      </li>
     </ul>
   </div>
 </header>
@@ -177,24 +168,9 @@ const isActive = (href: string) => href.startsWith('/') && path === href;
     color: var(--color-primary);
   }
 
-  .mobile-nav .btn {
-    margin-top: 0.5rem;
-    color: #fff;
-    text-align: center;
-  }
-
-  .mobile-nav .btn:hover {
-    background: var(--color-primary-dark);
-    color: #fff;
-  }
-
   @media (min-width: 960px) {
     .nav__list {
       display: flex;
-    }
-
-    .header__cta {
-      display: inline-flex;
     }
 
     .menu-toggle,

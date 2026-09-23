@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { trainingSteps, membership, site } from '../config/site';
+import { trainingSteps, site } from '../config/site';
 import Icon from '../components/Icon.astro';
 import CTASection from '../components/CTASection.astro';
 
@@ -22,10 +22,11 @@ const forWho = [
     <div class="container">
       <span class="section__eyebrow">Servicio estrella</span>
       <h1>Entrenamiento personalizado</h1>
-      <p>
-        Un plan diseñado para ti, con un entrenador que acompaña cada paso: de la evaluación inicial
-        a los ajustes según tus resultados.
-      </p>
+        <p>
+          Un plan diseñado para ti, con un entrenador que acompaña cada paso: de la evaluación inicial
+          a los ajustes según tus resultados. Al escribir por WhatsApp puedes indicar el entrenador
+          que prefieras.
+        </p>
       <a class="btn btn--primary" href={href} target="_blank" rel="noopener">
         Agendar evaluación por WhatsApp
       </a>
@@ -72,7 +73,6 @@ const forWho = [
           <li>Ajustes según tus avances</li>
           <li>Orientación de técnica y hábitos</li>
         </ul>
-        <p class="info-card__note">{membership.note}</p>
         <a class="btn btn--primary" href={href} target="_blank" rel="noopener">
           Consultar disponibilidad
         </a>
@@ -205,12 +205,6 @@ const forWho = [
     color: var(--color-primary);
     font-weight: 700;
     margin-right: 0.55rem;
-  }
-
-  .info-card__note {
-    font-size: 0.9rem;
-    color: var(--color-muted);
-    margin-bottom: 1.25rem;
   }
 
   @media (min-width: 860px) {

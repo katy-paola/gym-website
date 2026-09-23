@@ -2,7 +2,14 @@
 import { membership, site } from '../config/site';
 import Icon from './Icon.astro';
 
-const href = `${site.whatsapp}?text=${encodeURIComponent('Hola, me gustaría conocer los planes de membresía de Snap Fitness.')}`;
+type Plan = (typeof membership.plans)[number];
+
+function ctaHref(plan: Plan): string {
+  const msg = plan.price
+    ? `Hola, me interesa el plan "${plan.name}" (${plan.price} ${plan.period}) de Snap Fitness.`
+    : `Hola, me interesa el entrenamiento personalizado. ¿Me pueden cotizar?`;
+  return `${site.whatsapp}?text=${encodeURIComponent(msg)}`;
+}
 ---
 
 <section class="section section--alt" id="membresia">
@@ -11,8 +18,8 @@ const href = `${site.whatsapp}?text=${encodeURIComponent('Hola, me gustaría con
       <span class="section__eyebrow">Membresía</span>
       <h2 class="section__title">Qué incluye tu membresía</h2>
       <p class="section__lead">
-        Planes simples y flexibles, sin letra pequeña. Consulta precios y disponibilidad directo por
-        WhatsApp.
+        Precios claros desde el primer momento. Reserva el día o el mes por WhatsApp; el
+        entrenamiento personalizado se cotiza según tus objetivos.
       </p>
     </header>
 
@@ -30,7 +37,11 @@ const href = `${site.whatsapp}?text=${encodeURIComponent('Hola, me gustaría con
         <article class:list={['plan', { 'plan--featured': plan.highlighted }]}>
           {plan.highlighted && <span class="plan__tag">Recomendado</span>}
           <h3 class="plan__name">{plan.name}</h3>
-          <p class="plan__price">{plan.price}</p>
+          {plan.price ? (
+            <p class="plan__price">{plan.price}</p>
+          ) : (
+            <p class="plan__price plan__price--alt">A cotizar</p>
+          )}
           <p class="plan__period">{plan.period}</p>
           <ul class="plan__features">
             {plan.features.map((f) => (
@@ -39,17 +50,15 @@ const href = `${site.whatsapp}?text=${encodeURIComponent('Hola, me gustaría con
           </ul>
           <a
             class:list={['btn', plan.highlighted ? 'btn--primary' : 'btn--outline', 'plan__cta']}
-            href={href}
+            href={ctaHref(plan)}
             target="_blank"
             rel="noopener"
           >
-            Consultar precio
+            {plan.cta}
           </a>
         </article>
       ))}
     </div>
-
-    <p class="note">{membership.note}</p>
   </div>
 </section>
 
@@ -125,6 +134,11 @@ const href = `${site.whatsapp}?text=${encodeURIComponent('Hola, me gustaría con
     line-height: 1;
   }
 
+  .plan__price--alt {
+    font-size: 1.55rem;
+    color: var(--color-ink);
+  }
+
   .plan__period {
     color: var(--color-muted);
     font-size: 0.9rem;
@@ -155,13 +169,6 @@ const href = `${site.whatsapp}?text=${encodeURIComponent('Hola, me gustaría con
 
   .plan__cta {
     width: 100%;
-  }
-
-  .note {
-    margin-top: 2rem;
-    font-size: 0.92rem;
-    color: var(--color-muted);
-    max-width: 70ch;
   }
 
   @media (min-width: 720px) {

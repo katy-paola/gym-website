@@ -2,7 +2,7 @@ export const SITE_URL = 'https://snapfitness2026.example.com';
 
 export const site = {
   name: 'Snap Fitness',
-  tagline: 'Entrena a tu ritmo. Alcanza tus metas.',
+  tagline: 'Supera tus límites',
   description:
     'Gimnasio con acceso libre y entrenamiento personalizado. Un espacio moderno, limpio y con equipo profesional para lograr tus objetivos de fitness.',
   instagram: 'https://www.instagram.com/snapfitness2026/',
@@ -74,37 +74,43 @@ export const membership = {
   ],
   plans: [
     {
-      name: 'Mensual',
-      price: '$ Consultar',
-      period: 'por mes',
+      name: 'Por día',
+      price: '$3.500',
+      period: 'Paga solo el día que vayas',
+      cta: 'Reservar por WhatsApp',
       highlighted: false,
-      features: ['Acceso al gimnasio', 'Orientación inicial', 'Sin permanencia larga'],
+      features: [
+        'Acceso al gimnasio por un día',
+        'Uso de equipos de cardio y fuerza',
+        'Orientación del equipo',
+      ],
     },
     {
-      name: 'Trimestral',
-      price: '$ Consultar',
-      period: 'por 3 meses',
+      name: 'Mensual',
+      price: '$70.000',
+      period: 'Por mes',
+      cta: 'Reservar por WhatsApp',
       highlighted: true,
       features: [
-        'Acceso al gimnasio',
+        'Acceso al gimnasio todo el mes',
+        'Uso de equipos de cardio y fuerza',
         'Orientación inicial',
-        'Seguimiento de progreso',
-        'Mejor valor por mes',
+        'Atención del equipo',
       ],
     },
     {
       name: 'Entrenamiento personalizado',
-      price: '$ Consultar',
-      period: 'plan a medida',
+      price: null,
+      period: 'Precio según tus objetivos',
+      cta: 'Pedir cotización',
       highlighted: false,
       features: [
         'Plan según tus objetivos',
-        'Sesiones con entrenador',
-        'Ajustes y seguimiento',
+        'Diseñada para tu nivel',
+        'Ajustes según tus avances',
       ],
     },
   ],
-  note: 'Los precios y planes definitivos se confirman por WhatsApp. Escríbenos y te enviamos la información actualizada.',
 } as const;
 
 export const trainingSteps = [
@@ -136,25 +142,16 @@ export const trainingSteps = [
 
 export const trainers = [
   {
-    name: 'Nombre del entrenador',
-    role: 'Entrenador principal',
-    specialty: 'Fuerza y acondicionamiento',
-    bio: 'Especialista en acompañar a personas que inician y a quienes buscan rendir más. Enfoque en técnica, constancia y resultados sostenibles.',
-    image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&h=600&fit=crop',
+    name: 'Jean Carlos Benítez',
+    role: 'Entrenador',
+    specialty: 'Orientación en el gimnasio',
+    image: 'https://images.unsplash.com/photo-1711006366881-5076ba350008?w=600&h=600&fit=crop&crop=faces',
   },
   {
-    name: 'Nombre del entrenador',
-    role: 'Entrenadora personal',
-    specialty: 'Pérdida de grasa y hábitos',
-    bio: 'Acompaña procesos de transformación con planes realistas, seguimiento cercano y rutinas que se adaptan a la vida diaria.',
-    image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=600&fit=crop',
-  },
-  {
-    name: 'Nombre del entrenador',
-    role: 'Entrenador personal',
-    specialty: 'Principiantes y técnica',
-    bio: 'Ideal si es tu primera vez en un gimnasio: enseña el uso del equipo, la técnica básica y a construir confianza desde el día uno.',
-    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=600&fit=crop',
+    name: 'Jesús Villadiego',
+    role: 'Entrenador',
+    specialty: 'Orientación en el gimnasio',
+    image: 'https://images.unsplash.com/photo-1578924608828-79a71150f711?w=600&h=600&fit=crop&crop=faces',
   },
 ] as const;
 
@@ -195,8 +192,12 @@ export const faqs = [
     a: 'Primero hacemos una evaluación de tus objetivos y nivel, luego diseñamos tu plan, entrenas con acompañamiento y hacemos ajustes según tus avances.',
   },
   {
+    q: '¿Puedo elegir el entrenador del personalizado?',
+    a: 'Sí. Al escribir por WhatsApp puedes indicar con cuál entrenador prefieres coordinar. Si no especificas ninguno, te atiende el equipo disponible.',
+  },
+  {
     q: '¿Hay permanencia o contrato largo?',
-    a: 'Ofrecemos planes flexibles. La modalidad exacta y las condiciones te las confirmamos por WhatsApp antes de inscribirte.',
+    a: 'No. Puedes pagar el día ($3.500) o el mes ($70.000); el entrenamiento personalizado se cotiza por WhatsApp.',
   },
   {
     q: '¿Cómo agendo una visita o clase de prueba?',

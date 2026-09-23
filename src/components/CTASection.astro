@@ -59,6 +59,22 @@ const href = `${site.whatsapp}?text=${encodeURIComponent(site.whatsappMessage)}`
     gap: 0.85rem;
   }
 
+  @media (max-width: 640px) {
+    .cta__inner {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .cta__actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .cta .btn {
+      width: 100%;
+    }
+  }
+
   .cta .btn--primary {
     background: #fff;
     color: var(--color-primary);

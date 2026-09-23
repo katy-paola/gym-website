@@ -18,7 +18,7 @@ import Icon from './Icon.astro';
     </div>
 
     <div class="ig__card">
-      <p class="ig__quote">“Constantancia beats motivación.”</p>
+      <p class="ig__quote">“Supera tus límites”</p>
       <ul>
         <li>Contenido y tips de entrenamiento</li>
         <li>Retos y comunidad</li>
@@ -76,13 +76,17 @@ import Icon from './Icon.astro';
   }
 
   .ig__link {
-    display: inline-flex;
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
     gap: 0.4rem;
     font-weight: 700;
     color: #fff;
+    text-decoration: none;
     border-bottom: 2px solid var(--color-primary);
     padding-bottom: 0.15rem;
+    width: fit-content;
+    margin-left: auto;
   }
 
   .ig__link:hover {
