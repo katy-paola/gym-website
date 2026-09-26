@@ -13,7 +13,7 @@ export const site = {
   whatsappMessage:
     "Hola, me gustaría información sobre membresías y el entrenamiento personalizado de Snap Fitness.",
   address: {
-    street: "Calle 00 # 00-00",
+    street: "Calle 13 #16-07",
     city: "San Pedro",
     department: "Sucre",
     country: "Colombia",
