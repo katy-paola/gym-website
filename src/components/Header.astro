@@ -1,45 +1,56 @@
 ---
-import { site, nav } from '../config/site';
+import { site, nav } from "../config/site";
+import Logo from "./Logo.astro";
 
 const path = Astro.url.pathname;
-const isActive = (href: string) => href.startsWith('/') && path === href;
+const isActive = (href: string) => href.startsWith("/") && path === href;
 ---
 
 <header class="header">
   <div class="container header__inner">
     <a class="logo" href="/" aria-label={`${site.name} — inicio`}>
-      <span class="logo__mark" aria-hidden="true">S</span>
+      <Logo />
       <span class="logo__text">Snap <strong>Fitness</strong></span>
     </a>
 
     <nav class="nav" aria-label="Principal">
       <ul class="nav__list">
-        {nav.map((item) => (
-          <li>
-            <a
-              href={item.href}
-              class:list={['nav__link', { 'is-active': isActive(item.href) }]}
-              aria-current={isActive(item.href) ? 'page' : undefined}
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
+        {
+          nav.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={["nav__link", { "is-active": isActive(item.href) }]}
+                aria-current={isActive(item.href) ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
 
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      aria-label="Abrir menú"
+    >
       <span></span><span></span><span></span>
     </button>
   </div>
 
   <div class="mobile-nav" id="mobile-nav" hidden>
     <ul>
-      {nav.map((item) => (
-        <li>
-          <a href={item.href}>{item.label}</a>
-        </li>
-      ))}
+      {
+        nav.map((item) => (
+          <li>
+            <a href={item.href}>{item.label}</a>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </header>
@@ -181,22 +192,22 @@ const isActive = (href: string) => href.startsWith('/') && path === href;
 </style>
 
 <script>
-  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
-  const mobileNav = document.querySelector<HTMLElement>('#mobile-nav');
+  const toggle = document.querySelector<HTMLButtonElement>(".menu-toggle");
+  const mobileNav = document.querySelector<HTMLElement>("#mobile-nav");
 
-  toggle?.addEventListener('click', () => {
-    const open = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!open));
-    toggle.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
+  toggle?.addEventListener("click", () => {
+    const open = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!open));
+    toggle.setAttribute("aria-label", open ? "Abrir menú" : "Cerrar menú");
     if (mobileNav) mobileNav.hidden = open;
   });
 
-  mobileNav?.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
+  mobileNav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
       if (!mobileNav || !toggle) return;
       mobileNav.hidden = true;
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.setAttribute('aria-label', 'Abrir menú');
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Abrir menú");
     });
   });
 </script>
