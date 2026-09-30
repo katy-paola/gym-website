@@ -158,29 +158,30 @@ export const trainers = [
 
 export const facilities = [
   {
-    title: "Zona de cardio",
+    title: "Cardio",
     description:
-      "Cintas, bicicletas y elípticas para calentamiento y resistencia.",
+      "Equipos para complementar tu entrenamiento y trabajar resistencia cardiovascular.",
     image:
       "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1400&h=800&fit=crop",
   },
   {
-    title: "Zona de fuerza",
-    description: "Máquinas y pesas libres para trabajar todo el cuerpo.",
+    title: "Entrenamiento de fuerza",
+    description:
+      "Máquinas y pesas para trabajar diferentes grupos musculares y desarrollar fuerza.",
     image:
       "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&h=700&fit=crop",
   },
   {
-    title: "Área funcional",
+    title: "Entrenamiento funcional",
     description:
-      "Espacio libre para calentamiento, movilidad y ejercicios funcionales.",
+      "Espacio y equipamiento para realizar ejercicios de movilidad, calentamiento y trabajo funcional.",
     image:
       "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&h=700&fit=crop",
   },
   {
-    title: "Espacios limpios y ordenados",
+    title: "Un espacio cuidado",
     description:
-      "Instalaciones cuidadas, con atención constante a la higiene y el mantenimiento.",
+      "Un ambiente limpio, ordenado y pensado para que puedas entrenar con comodidad.",
     image:
       "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=900&h=700&fit=crop",
   },
