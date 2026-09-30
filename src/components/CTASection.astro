@@ -1,5 +1,5 @@
 ---
-import { site } from '../config/site';
+import { site } from "../config/site";
 
 const href = `${site.whatsapp}?text=${encodeURIComponent(site.whatsappMessage)}`;
 ---
@@ -9,15 +9,15 @@ const href = `${site.whatsapp}?text=${encodeURIComponent(site.whatsappMessage)}`
     <div>
       <h2>¿Te gustaría entrenar con nosotros?</h2>
       <p>
-        Escríbenos por WhatsApp al <strong>{site.phoneDisplay}</strong> y agenda una visita o una
-        clase de prueba sin compromiso.
+        Escríbenos por WhatsApp y coordina tu visita para conocer el gimnasio y
+        nuestras opciones de entrenamiento.
       </p>
     </div>
     <div class="cta__actions">
       <a class="btn btn--primary" href={href} target="_blank" rel="noopener">
         Escribir por WhatsApp
       </a>
-      <a class="btn btn--ghost" href={`tel:${site.phoneRaw.replace('+', '')}`}>
+      <a class="btn btn--ghost" href={`tel:${site.phoneRaw.replace("+", "")}`}>
         Llamar ahora
       </a>
     </div>
@@ -28,7 +28,7 @@ const href = `${site.whatsapp}?text=${encodeURIComponent(site.whatsappMessage)}`
   .cta {
     background:
       linear-gradient(120deg, rgba(228, 0, 43, 0.95), rgba(184, 0, 35, 0.92)),
-      url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1600&h=700&fit=crop')
+      url("https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1600&h=700&fit=crop")
         center / cover;
     color: #fff;
   }

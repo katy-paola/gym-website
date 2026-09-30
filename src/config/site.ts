@@ -81,7 +81,8 @@ export const membership = {
       features: [
         "Acceso al gimnasio por un día",
         "Uso de equipos de cardio y fuerza",
-        "Orientación del equipo",
+        "Orientación inicial",
+        "Apoyo del equipo durante el entrenamiento",
       ],
     },
     {
@@ -94,7 +95,7 @@ export const membership = {
         "Acceso al gimnasio todo el mes",
         "Uso de equipos de cardio y fuerza",
         "Orientación inicial",
-        "Atención del equipo",
+        "Apoyo del equipo durante el entrenamiento",
       ],
     },
     {
@@ -104,9 +105,10 @@ export const membership = {
       cta: "Pedir cotización",
       highlighted: false,
       features: [
-        "Plan según tus objetivos",
-        "Diseñada para tu nivel",
-        "Ajustes según tus avances",
+        "Evaluación inicial con peso y medidas corporales",
+        "Rutina adaptada a tus objetivos y nivel",
+        "Entrenamiento guiado en cada sesión",
+        "Seguimiento y ajustes según tu progreso",
       ],
     },
   ],
@@ -207,10 +209,6 @@ export const faqs = [
   {
     q: "¿Hay permanencia o contrato largo?",
     a: "No. Puedes pagar el día ($3.500) o el mes ($70.000); el entrenamiento personalizado se cotiza por WhatsApp.",
-  },
-  {
-    q: "¿Cómo agendo una visita o clase de prueba?",
-    a: "Escríbenos al WhatsApp +57 302 351 8805 y coordinamos una visita o una primera sesión sin compromiso.",
   },
   {
     q: "¿Dónde están ubicados?",
