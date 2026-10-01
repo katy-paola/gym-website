@@ -29,11 +29,9 @@ export const site = {
 export const nav = [
   { href: "#servicios", label: "Servicios" },
   { href: "#membresia", label: "Membresía" },
-  { href: "#entrenamiento", label: "Entrenamiento" },
   { href: "#equipo", label: "Equipo" },
   { href: "#instalaciones", label: "Instalaciones" },
-  { href: "#faq", label: "FAQ" },
-  { href: "/contacto", label: "Contacto" },
+  { href: "#contacto", label: "Contacto" },
 ] as const;
 
 export const services = [
@@ -139,6 +137,13 @@ export const trainingSteps = [
     description:
       "Revisamos avances y ajustamos el plan para que sigas progresando sin estancamientos ni lesiones.",
   },
+] as const;
+
+export const trainingForWho = [
+  "Personas que empiezan y quieren seguridad al entrenar",
+  "Quienes se estancaron y necesitan un plan con estructura",
+  "Objetivos claros: bajar de grasa, ganar fuerza, mejorar energía",
+  "Quienes prefieren entrenar acompañados y con seguimiento",
 ] as const;
 
 export const trainers = [

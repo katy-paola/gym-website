@@ -1,5 +1,5 @@
 ---
-import { membership, site } from '../config/site';
+import { membership, trainingSteps, trainingForWho, site } from '../config/site';
 import Icon from './Icon.astro';
 
 type Plan = (typeof membership.plans)[number];
@@ -10,6 +10,8 @@ function ctaHref(plan: Plan): string {
     : `Hola, me interesa el entrenamiento personalizado. ¿Me pueden cotizar?`;
   return `${site.whatsapp}?text=${encodeURIComponent(msg)}`;
 }
+
+const evalHref = `${site.whatsapp}?text=${encodeURIComponent('Hola, me interesa el entrenamiento personalizado. ¿Cómo agendo una evaluación?')}`;
 ---
 
 <section class="section section--alt" id="membresia">
@@ -58,6 +60,48 @@ function ctaHref(plan: Plan): string {
           </a>
         </article>
       ))}
+    </div>
+
+    <div class="training" id="entrenamiento">
+      <header class="training__head">
+        <span class="section__eyebrow">Entrenamiento personalizado</span>
+        <h3 class="training__title">Cómo funciona, paso a paso</h3>
+        <p class="training__lead">
+          No es una rutina genérica. Diseñamos un plan según tus objetivos y lo ajustamos según tus
+          resultados.
+        </p>
+      </header>
+
+      <ol class="steps">
+        {trainingSteps.map((s) => (
+          <li class="step">
+            <span class="step__num">{s.step}</span>
+            <h4 class="step__title">{s.title}</h4>
+            <p class="step__text">{s.description}</p>
+          </li>
+        ))}
+      </ol>
+
+      <div class="forwho">
+        <div>
+          <h4 class="forwho__title">Para quién es</h4>
+          <ul class="forwho__list">
+            {trainingForWho.map((item) => (
+              <li><span class="forwho__check"><Icon name="check" /></span> {item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="forwho__cta">
+          <h4>¿Listo para empezar con un plan a tu medida?</h4>
+          <p>
+            Agenda tu evaluación inicial por WhatsApp. Puedes indicar el entrenador que prefieras; si
+            no especificas ninguno, te atiende el equipo disponible.
+          </p>
+          <a class="btn btn--primary" href={evalHref} target="_blank" rel="noopener">
+            Quiero mi evaluación
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -171,9 +215,145 @@ function ctaHref(plan: Plan): string {
     width: 100%;
   }
 
+  .training {
+    margin-top: clamp(4rem, 9vw, 6rem);
+    padding-top: clamp(3rem, 7vw, 4.5rem);
+    border-top: 1px solid var(--color-line);
+    scroll-margin-top: calc(var(--header-h) + 12px);
+  }
+
+  .training__head {
+    max-width: 640px;
+    margin-bottom: clamp(2.25rem, 4.5vw, 3.5rem);
+  }
+
+  .training__title {
+    font-size: clamp(1.4rem, 3vw, 1.85rem);
+    margin: 0.4rem 0 0.5rem;
+  }
+
+  .training__lead {
+    color: var(--color-ink-soft);
+    margin: 0;
+  }
+
+  .steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: clamp(1.25rem, 2.5vw, 1.75rem);
+  }
+
+  .step {
+    position: relative;
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    padding: clamp(1.5rem, 3vw, 1.85rem) clamp(1.35rem, 2.5vw, 1.6rem);
+  }
+
+  .step__num {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .step__title {
+    font-size: 1.05rem;
+    margin: 0 0 0.4rem;
+  }
+
+  .step__text {
+    color: var(--color-ink-soft);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .forwho {
+    display: grid;
+    gap: clamp(1.5rem, 3vw, 2rem);
+    margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  .forwho__title {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .forwho__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .forwho__list li {
+    display: flex;
+    gap: 0.65rem;
+    align-items: flex-start;
+    color: var(--color-ink-soft);
+    font-weight: 500;
+    font-size: 0.97rem;
+  }
+
+  .forwho__check {
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+
+  .forwho__cta {
+    background: var(--color-dark);
+    color: #fff;
+    border-radius: var(--radius-lg);
+    padding: clamp(1.5rem, 4vw, 2.25rem);
+    align-self: start;
+  }
+
+  .forwho__cta h4 {
+    font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .forwho__cta p {
+    color: #c7cbd4;
+    margin: 0 0 1.25rem;
+    max-width: 48ch;
+    font-size: 0.97rem;
+  }
+
   @media (min-width: 720px) {
     .includes {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .steps {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .forwho {
+      grid-template-columns: 1fr 1.1fr;
+      align-items: start;
+      gap: 2.5rem;
     }
   }
 

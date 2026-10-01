@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
+import BackToTop from '../components/BackToTop.astro';
 import { site, SITE_URL } from '../config/site';
 
 interface Props {
@@ -67,5 +68,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE_URL).href;
     </main>
     <Footer />
     <WhatsAppButton />
+    <BackToTop />
   </body>
 </html>

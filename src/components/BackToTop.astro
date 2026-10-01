@@ -1,0 +1,52 @@
+<button class="to-top" type="button" aria-label="Volver arriba" hidden>
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7" />
+  </svg>
+</button>
+
+<style>
+  .to-top {
+    position: fixed;
+    right: 1.1rem;
+    bottom: 1.1rem;
+    z-index: 90;
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--color-dark);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+
+  .to-top:hover {
+    transform: translateY(-2px);
+    background: var(--color-primary);
+  }
+
+  .to-top[hidden] {
+    display: none;
+  }
+</style>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>(".to-top");
+  const threshold = 480;
+
+  const onScroll = () => {
+    if (!btn) return;
+    btn.hidden = window.scrollY < threshold;
+  };
+
+  btn?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+</script>
