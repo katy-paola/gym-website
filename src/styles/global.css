@@ -11,8 +11,9 @@
   --color-dark: #0e1015;
   --color-dark-soft: #1a1d25;
 
-  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Montserrat', var(--font-sans);
+  --font-sans:
+    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Montserrat", var(--font-sans);
 
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -56,6 +57,14 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.footer__author {
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 h1,

@@ -42,16 +42,14 @@ const year = new Date().getFullYear();
       <h3 class="footer__title">Contacto</h3>
       <ul class="footer__links">
         <li>
-          <a href={site.whatsapp} target="_blank" rel="noopener"
-            >WhatsApp {site.phoneDisplay}</a
-          >
+          <a href={site.whatsapp} target="_blank" rel="noopener">WhatsApp</a>
         </li>
         <li>
           <a href={`tel:${site.phoneRaw.replace("+", "")}`}
-            >Llamar {site.phoneDisplay}</a
+            >{site.phoneDisplay}</a
           >
         </li>
-        <li><a href="/#ubicacion">Visita y ubicación</a></li>
+        <li><a href="/#ubicacion">Ubicación</a></li>
         <li>
           <span>{site.address.street}, {site.address.city}</span>
         </li>
@@ -61,7 +59,13 @@ const year = new Date().getFullYear();
 
   <div class="container footer__bottom">
     <span>© {year} {site.name}. Todos los derechos reservados.</span>
-    <span>Hecho para la comunidad fitness.</span>
+    <p>
+      Sitio web hecho por <a
+        class="footer__author"
+        href="https://www.linkedin.com/in/katy-barboza-baena/"
+        target="_blank">Katy Barboza</a
+      >.
+    </p>
   </div>
 </footer>
 
