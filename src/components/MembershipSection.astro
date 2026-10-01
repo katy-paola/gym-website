@@ -16,7 +16,7 @@ const evalHref = `${site.whatsapp}?text=${encodeURIComponent('Hola, me interesa 
 
 <section class="section section--alt" id="membresia">
   <div class="container">
-    <header class="section__head">
+    <header class="section__head reveal">
       <span class="section__eyebrow">Membresía</span>
       <h2 class="section__title">Qué incluye tu membresía</h2>
       <p class="section__lead">
@@ -25,7 +25,7 @@ const evalHref = `${site.whatsapp}?text=${encodeURIComponent('Hola, me interesa 
       </p>
     </header>
 
-    <ul class="includes">
+    <ul class="includes reveal">
       {membership.includes.map((item) => (
         <li>
           <span class="includes__check"><Icon name="check" /></span>
@@ -35,8 +35,8 @@ const evalHref = `${site.whatsapp}?text=${encodeURIComponent('Hola, me interesa 
     </ul>
 
     <div class="grid grid--3 plans">
-      {membership.plans.map((plan) => (
-        <article class:list={['plan', { 'plan--featured': plan.highlighted }]}>
+      {membership.plans.map((plan, i) => (
+        <article class:list={['plan', 'reveal', { 'plan--featured': plan.highlighted }]} style={`--i:${i}`}>
           {plan.highlighted && <span class="plan__tag">Recomendado</span>}
           <h3 class="plan__name">{plan.name}</h3>
           {plan.price ? (
@@ -62,7 +62,7 @@ const evalHref = `${site.whatsapp}?text=${encodeURIComponent('Hola, me interesa 
       ))}
     </div>
 
-    <div class="training" id="entrenamiento">
+    <div class="training reveal" id="entrenamiento">
       <header class="training__head">
         <span class="section__eyebrow">Entrenamiento personalizado</span>
         <h3 class="training__title">Cómo funciona, paso a paso</h3>
@@ -73,8 +73,8 @@ const evalHref = `${site.whatsapp}?text=${encodeURIComponent('Hola, me interesa 
       </header>
 
       <ol class="steps">
-        {trainingSteps.map((s) => (
-          <li class="step">
+        {trainingSteps.map((s, i) => (
+          <li class="step reveal" style={`--i:${i}`}>
             <span class="step__num">{s.step}</span>
             <h4 class="step__title">{s.title}</h4>
             <p class="step__text">{s.description}</p>
@@ -82,7 +82,7 @@ const evalHref = `${site.whatsapp}?text=${encodeURIComponent('Hola, me interesa 
         ))}
       </ol>
 
-      <div class="forwho">
+      <div class="forwho reveal">
         <div>
           <h4 class="forwho__title">Para quién es</h4>
           <ul class="forwho__list">

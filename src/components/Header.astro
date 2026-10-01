@@ -63,6 +63,11 @@ const isActive = (href: string) => href.startsWith("/") && path === href;
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-line);
+    transition: box-shadow 0.25s ease;
+  }
+
+  .header.is-scrolled {
+    box-shadow: 0 8px 24px rgba(16, 20, 30, 0.08);
   }
 
   .header__inner {
@@ -201,6 +206,11 @@ const isActive = (href: string) => href.startsWith("/") && path === href;
 <script>
   const toggle = document.querySelector<HTMLButtonElement>(".menu-toggle");
   const mobileNav = document.querySelector<HTMLElement>("#mobile-nav");
+  const header = document.querySelector<HTMLElement>(".header");
+
+  const onScroll = () => header?.classList.toggle("is-scrolled", window.scrollY > 10);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 
   toggle?.addEventListener("click", () => {
     const open = toggle.getAttribute("aria-expanded") === "true";

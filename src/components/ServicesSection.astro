@@ -5,7 +5,7 @@ import Icon from './Icon.astro';
 
 <section class="section" id="servicios">
   <div class="container">
-    <header class="section__head">
+    <header class="section__head reveal">
       <span class="section__eyebrow">Servicios</span>
       <h2 class="section__title">Todo lo que necesitas para entrenar bien</h2>
       <p class="section__lead">
@@ -15,8 +15,8 @@ import Icon from './Icon.astro';
     </header>
 
     <div class="grid grid--4">
-      {services.map((s) => (
-        <article class="card">
+      {services.map((s, i) => (
+        <article class="card reveal" style={`--i:${i}`}>
           <span class="card__icon">
             <Icon name={s.icon as 'key'} />
           </span>

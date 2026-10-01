@@ -4,7 +4,7 @@ import { facilities } from '../config/site';
 
 <section class="section section--alt" id="instalaciones">
   <div class="container">
-    <header class="section__head">
+    <header class="section__head reveal">
       <span class="section__eyebrow">Instalaciones</span>
       <h2 class="section__title">Un espacio para entrenar cómodo</h2>
       <p class="section__lead">
@@ -14,7 +14,7 @@ import { facilities } from '../config/site';
 
     <div class="gallery">
       {facilities.map((f, i) => (
-        <figure class:list={['shot', { 'shot--wide': i === 0 }]}>
+        <figure class:list={['shot', 'reveal', { 'shot--wide': i === 0 }]} style={`--i:${i}`}>
           <img src={f.image} alt={f.title} width="900" height="700" loading="lazy" />
           <figcaption>
             <strong>{f.title}</strong>

@@ -5,7 +5,7 @@ import Icon from './Icon.astro';
 
 <section class="section section--alt" id="ubicacion">
   <div class="container">
-    <header class="section__head">
+    <header class="section__head reveal">
       <span class="section__eyebrow">Horarios y ubicación</span>
       <h2 class="section__title">Visítanos cuando te quede cómodo</h2>
       <p class="section__lead">
@@ -15,7 +15,7 @@ import Icon from './Icon.astro';
     </header>
 
     <div class="split">
-      <div class="panel">
+      <div class="panel reveal">
         <h3 class="panel__title"><Icon name="clock" /> Horarios</h3>
         <dl class="hours">
           {site.hours.map((h) => (
@@ -45,7 +45,7 @@ import Icon from './Icon.astro';
         </div>
       </div>
 
-      <div class="map">
+      <div class="map reveal" style="--i:1">
         <iframe
           src="https://www.google.com/maps?q=Snap+Fitness&output=embed"
           title="Mapa de ubicación de Snap Fitness"

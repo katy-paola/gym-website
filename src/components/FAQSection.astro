@@ -4,7 +4,7 @@ import { faqs } from '../config/site';
 
 <section class="section" id="faq">
   <div class="container faq">
-    <header class="section__head">
+    <header class="section__head reveal">
       <span class="section__eyebrow">Preguntas frecuentes</span>
       <h2 class="section__title">Respuestas antes de que preguntes</h2>
       <p class="section__lead">
@@ -13,8 +13,8 @@ import { faqs } from '../config/site';
     </header>
 
     <div class="faq__list">
-      {faqs.map((f) => (
-        <details class="faq__item">
+      {faqs.map((f, i) => (
+        <details class="faq__item reveal" style={`--i:${i}`}>
           <summary>{f.q}</summary>
           <p>{f.a}</p>
         </details>
@@ -39,6 +39,28 @@ import { faqs } from '../config/site';
     border-radius: var(--radius-md);
     padding: 0.25rem 1.15rem;
     transition: border-color 0.15s ease;
+    interpolate-size: allow-keywords;
+  }
+
+  .faq__item::details-content {
+    height: 0;
+    overflow: clip;
+    display: flow-root;
+    transition:
+      height 0.3s ease,
+      content-visibility 0s linear 0.3s allow-discrete;
+  }
+
+  .faq__item[open]::details-content {
+    height: auto;
+    transition: height 0.3s ease;
+  }
+
+  @supports not (interpolate-size: allow-keywords) {
+    .faq__item::details-content,
+    .faq__item[open]::details-content {
+      transition: none;
+    }
   }
 
   .faq__item[open] {

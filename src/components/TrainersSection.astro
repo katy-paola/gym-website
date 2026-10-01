@@ -9,7 +9,7 @@ function waHref(name: string): string {
 
 <section class="section" id="equipo">
   <div class="container">
-    <header class="section__head">
+    <header class="section__head reveal">
       <span class="section__eyebrow">Equipo</span>
       <h2 class="section__title">Entrenadores que te acompañan</h2>
       <p class="section__lead">
@@ -18,8 +18,8 @@ function waHref(name: string): string {
     </header>
 
     <div class="grid grid--2">
-      {trainers.map((t) => (
-        <article class="trainer">
+      {trainers.map((t, i) => (
+        <article class="trainer reveal" style={`--i:${i}`}>
           <div class="trainer__photo" aria-hidden="true">
             <svg viewBox="0 0 64 64" width="100%" height="100%" fill="currentColor" aria-hidden="true">
               <circle cx="32" cy="24" r="12" />
