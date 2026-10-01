@@ -1,5 +1,5 @@
 ---
-import { site } from '../config/site';
+import { site } from "../config/site";
 
 const year = new Date().getFullYear();
 ---
@@ -12,11 +12,16 @@ const year = new Date().getFullYear();
         Snap <strong>Fitness</strong>
       </a>
       <p class="footer__text">
-        Gimnasio con acceso libre y entrenamiento personalizado. Un espacio para entrenar a tu ritmo y
-        avanzar hacia tus metas.
+        Gimnasio con acceso libre y entrenamiento personalizado. Un espacio para
+        entrenar a tu ritmo y avanzar hacia tus metas.
       </p>
-      <a class="footer__ig" href={site.instagram} target="_blank" rel="noopener">
-        Instagram {site.instagramHandle}
+      <a
+        class="footer__ig"
+        href={site.instagram}
+        target="_blank"
+        rel="noopener"
+      >
+        {site.instagramHandle}
       </a>
     </div>
 
@@ -25,7 +30,9 @@ const year = new Date().getFullYear();
       <ul class="footer__links">
         <li><a href="/#servicios">Servicios</a></li>
         <li><a href="/#membresia">Membresía</a></li>
-        <li><a href="/entrenamiento-personalizado">Entrenamiento personalizado</a></li>
+        <li>
+          <a href="/entrenamiento-personalizado">Entrenamiento personalizado</a>
+        </li>
         <li><a href="/#equipo">Equipo</a></li>
         <li><a href="/#faq">Preguntas frecuentes</a></li>
       </ul>
@@ -35,10 +42,14 @@ const year = new Date().getFullYear();
       <h3 class="footer__title">Contacto</h3>
       <ul class="footer__links">
         <li>
-          <a href={site.whatsapp} target="_blank" rel="noopener">WhatsApp {site.phoneDisplay}</a>
+          <a href={site.whatsapp} target="_blank" rel="noopener"
+            >WhatsApp {site.phoneDisplay}</a
+          >
         </li>
         <li>
-          <a href={`tel:${site.phoneRaw.replace('+', '')}`}>Llamar {site.phoneDisplay}</a>
+          <a href={`tel:${site.phoneRaw.replace("+", "")}`}
+            >Llamar {site.phoneDisplay}</a
+          >
         </li>
         <li><a href="/contacto">Visita y ubicación</a></li>
         <li>
