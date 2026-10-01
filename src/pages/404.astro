@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../config/site';
+
+const waHref = `${site.whatsapp}?text=${encodeURIComponent('Hola, encontré un enlace roto en la web de Snap Fitness.')}`;
+---
+
+<BaseLayout
+  title="Página no encontrada"
+  description="La página que buscas no existe en Snap Fitness. Vuelve al inicio o escríbenos por WhatsApp."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__eyebrow">Error 404</span>
+      <h1>Esta página no existe</h1>
+      <p>
+        Parece que el enlace está roto o la página fue movida. Vuelve al inicio o escríbenos por
+        WhatsApp si necesitas ayuda.
+      </p>
+      <div class="page-hero__actions">
+        <a class="btn btn--primary" href="/">Volver al inicio</a>
+        <a class="btn btn--ghost" href={waHref} target="_blank" rel="noopener">
+          Escribir por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(115deg, var(--color-dark), #1a0b10 60%, var(--color-primary-dark));
+    color: #fff;
+    padding-block: clamp(4rem, 10vw, 7rem);
+    min-height: clamp(420px, 60vh, 560px);
+    display: flex;
+    align-items: center;
+  }
+
+  .page-hero .section__eyebrow {
+    color: #ff9aab;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .page-hero p {
+    max-width: 54ch;
+    color: #e8eaef;
+    font-size: 1.08rem;
+    margin: 0 0 1.75rem;
+  }
+
+  .page-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+  }
+
+  .page-hero .btn--ghost {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+  }
+
+  .page-hero .btn--ghost:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+</style>
