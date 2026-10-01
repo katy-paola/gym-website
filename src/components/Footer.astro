@@ -1,5 +1,6 @@
 ---
 import { site } from "../config/site";
+import Logo from "./Logo.astro";
 
 const year = new Date().getFullYear();
 ---
@@ -8,7 +9,7 @@ const year = new Date().getFullYear();
   <div class="container footer__grid">
     <div>
       <a class="footer__logo" href="/">
-        <span class="logo__mark" aria-hidden="true">S</span>
+        <Logo />
         Snap <strong>Fitness</strong>
       </a>
       <p class="footer__text">
@@ -146,6 +147,13 @@ const year = new Date().getFullYear();
     color: #fff;
   }
 
+  .footer__author {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
   .footer__bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-block: 1.25rem;
