@@ -146,15 +146,11 @@ export const trainers = [
     name: "Nombre del entrenador",
     role: "Entrenador",
     specialty: "Orientación en el gimnasio",
-    image:
-      "https://images.unsplash.com/photo-1711006366881-5076ba350008?w=600&h=600&fit=crop&crop=faces",
   },
   {
     name: "Nombre del entrenador",
     role: "Entrenador",
     specialty: "Orientación en el gimnasio",
-    image:
-      "https://images.unsplash.com/photo-1578924608828-79a71150f711?w=600&h=600&fit=crop&crop=faces",
   },
 ] as const;
 
@@ -193,6 +189,10 @@ export const faqs = [
   {
     q: "¿El gimnasio es 24/7?",
     a: "No. Contamos con acceso libre dentro de nuestro horario de atención. Consulta los horarios actualizados en esta página o escríbenos por WhatsApp.",
+  },
+  {
+    q: "¿Abren los festivos?",
+    a: "Sí, abrimos festivos. El único día que no abrimos es el domingo.",
   },
   {
     q: "¿Necesito experiencia previa para entrenar aquí?",

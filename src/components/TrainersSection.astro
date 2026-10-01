@@ -20,8 +20,11 @@ function waHref(name: string): string {
     <div class="grid grid--2">
       {trainers.map((t) => (
         <article class="trainer">
-          <div class="trainer__photo">
-            <img src={t.image} alt={`Retrato de ${t.name}, ${t.role} en Snap Fitness`} width="600" height="600" loading="lazy" />
+          <div class="trainer__photo" aria-hidden="true">
+            <svg viewBox="0 0 64 64" width="100%" height="100%" fill="currentColor" aria-hidden="true">
+              <circle cx="32" cy="24" r="12" />
+              <path d="M32 40c-12 0-20 7-22 16a34 34 0 0 0 44 0c-2-9-10-16-22-16z" />
+            </svg>
           </div>
           <div class="trainer__body">
             <span class="trainer__role">{t.role}</span>
@@ -48,13 +51,11 @@ function waHref(name: string): string {
   .trainer__photo {
     aspect-ratio: 1;
     overflow: hidden;
-    background: var(--color-surface-alt);
-  }
-
-  .trainer__photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    background: #e4e7ed;
+    color: #7d8593;
+    display: grid;
+    place-items: center;
+    padding: 18%;
   }
 
   .trainer__body {
