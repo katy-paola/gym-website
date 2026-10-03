@@ -153,6 +153,19 @@ const isActive = (href: string) => href.startsWith("/") && path === href;
     height: 2px;
     background: var(--color-ink);
     border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 
   .mobile-nav {
@@ -165,10 +178,31 @@ const isActive = (href: string) => href.startsWith("/") && path === href;
     box-shadow: 0 16px 32px rgba(10, 11, 15, 0.12);
     max-height: calc(100vh - var(--header-h));
     overflow-y: auto;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      display 0.25s allow-discrete;
   }
 
-  .mobile-nav[hidden] {
-    display: none;
+  .mobile-nav:not([hidden]) {
+    opacity: 1;
+    transform: none;
+  }
+
+  @starting-style {
+    .mobile-nav:not([hidden]) {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .menu-toggle span,
+    .mobile-nav {
+      transition: none;
+    }
   }
 
   .mobile-nav ul {
