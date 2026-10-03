@@ -1,9 +1,6 @@
 ---
 import { site, nav } from "../config/site";
 import Logo from "./Logo.astro";
-
-const path = Astro.url.pathname;
-const isActive = (href: string) => href.startsWith("/") && path === href;
 ---
 
 <header class="header">
@@ -18,11 +15,7 @@ const isActive = (href: string) => href.startsWith("/") && path === href;
         {
           nav.map((item) => (
             <li>
-              <a
-                href={item.href}
-                class:list={["nav__link", { "is-active": isActive(item.href) }]}
-                aria-current={isActive(item.href) ? "page" : undefined}
-              >
+              <a href={item.href} class="nav__link">
                 {item.label}
               </a>
             </li>
@@ -225,6 +218,11 @@ const isActive = (href: string) => href.startsWith("/") && path === href;
     color: var(--color-primary);
   }
 
+  .mobile-nav a.is-active {
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+  }
+
   @media (min-width: 960px) {
     .nav__list {
       display: flex;
@@ -242,8 +240,41 @@ const isActive = (href: string) => href.startsWith("/") && path === href;
   const mobileNav = document.querySelector<HTMLElement>("#mobile-nav");
   const header = document.querySelector<HTMLElement>(".header");
 
-  const onScroll = () => header?.classList.toggle("is-scrolled", window.scrollY > 10);
+  const navLinks = Array.from(
+    document.querySelectorAll<HTMLAnchorElement>(".nav__link, .mobile-nav a"),
+  );
+  const sectionIds = [...new Set(navLinks.map((a) => a.hash.slice(1)).filter(Boolean))];
+
+  const updateActive = () => {
+    const offset = (header?.offsetHeight ?? 64) + 60;
+    let current = "";
+    let best = -Infinity;
+    for (const id of sectionIds) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+      const top = el.getBoundingClientRect().top;
+      if (top <= offset && top > best) {
+        best = top;
+        current = id;
+      }
+    }
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+      current = sectionIds[sectionIds.length - 1] ?? current;
+    }
+    for (const a of navLinks) {
+      const on = current !== "" && a.hash === `#${current}`;
+      a.classList.toggle("is-active", on);
+      if (on) a.setAttribute("aria-current", "location");
+      else a.removeAttribute("aria-current");
+    }
+  };
+
+  const onScroll = () => {
+    header?.classList.toggle("is-scrolled", window.scrollY > 10);
+    updateActive();
+  };
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", updateActive, { passive: true });
   onScroll();
 
   toggle?.addEventListener("click", () => {
