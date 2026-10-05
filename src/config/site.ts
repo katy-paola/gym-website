@@ -62,13 +62,6 @@ export const services = [
 ] as const;
 
 export const membership = {
-  includes: [
-    "Acceso al gimnasio en horario de atención",
-    "Uso de equipos de cardio y fuerza",
-    "Orientación inicial para empezar con seguridad",
-    "Espacios limpios y con mantenimiento",
-    "Atención del equipo en el lugar",
-  ],
   plans: [
     {
       name: "Por día",
