@@ -29,6 +29,9 @@ function waHref(name: string): string {
           <div class="trainer__body">
             <span class="trainer__role">{t.role}</span>
             <h3 class="trainer__name">{t.name}</h3>
+            {t.years !== undefined && (
+              <p class="trainer__exp">{t.years} años de experiencia</p>
+            )}
             <p class="trainer__specialty">{t.specialty}</p>
             <a class="btn btn--outline trainer__cta" href={waHref(t.name)} target="_blank" rel="noopener">
               Entrenamiento personalizado
@@ -73,6 +76,13 @@ function waHref(name: string): string {
   .trainer__name {
     font-size: 1.15rem;
     margin: 0.35rem 0 0.2rem;
+  }
+
+  .trainer__exp {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0.15rem 0;
   }
 
   .trainer__specialty {

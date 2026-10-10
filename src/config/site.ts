@@ -139,18 +139,27 @@ export const trainingForWho = [
   "Quienes prefieren entrenar acompañados y con seguimiento",
 ] as const;
 
-export const trainers = [
+type Trainer = {
+  name: string;
+  role: string;
+  specialty: string;
+  years?: string;
+};
+
+export const trainers: Trainer[] = [
   {
-    name: "Nombre del entrenador",
+    name: "Jean Carlos Benítez",
     role: "Entrenador",
     specialty: "Orientación en el gimnasio",
+    years: "x",
   },
   {
-    name: "Nombre del entrenador",
+    name: "Jesús Villadiego",
     role: "Entrenador",
     specialty: "Orientación en el gimnasio",
+    years: "6",
   },
-] as const;
+];
 
 export const facilities = [
   {
